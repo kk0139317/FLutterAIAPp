@@ -20,7 +20,11 @@ class HomePage extends StatelessWidget {
         ),
       ),
       drawer: const AppDrawer(), // Add the drawer here
-      body: Container(
+      body:SingleChildScrollView(
+      
+      child: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -52,17 +56,19 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             Image.asset(
               'assets/images/ai.png',
-              fit: BoxFit.cover,
+              height: 500,
+              width: 500,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/settings');
+                Navigator.pushNamed(context, '/predictor');
               },
               child: const Text('Get Started'),
             ),
           ],
         ),
+      ),
       ),
     );
   }

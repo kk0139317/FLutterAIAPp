@@ -39,6 +39,14 @@ class AppDrawer extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, '/settings');
               },
             ),
+            ListTile(
+              title: const Text('Predict'),
+              leading: Icon(Icons.settings, color: Colors.white),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+                Navigator.pushReplacementNamed(context, '/predictor');
+              },
+            ),
           ],
         ),
       ),
