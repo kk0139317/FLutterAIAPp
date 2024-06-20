@@ -10,7 +10,7 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Settings'),
         flexibleSpace: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -21,14 +21,14 @@ class SettingsPage extends StatelessWidget {
       ),
       drawer: const AppDrawer(), // Add the drawer here
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [Colors.green, Colors.teal],
           ),
         ),
-        child: Center(
+        child: const Center(
           child: Text(
             'Settings Page',
             style: TextStyle(fontSize: 20, color: Colors.white),

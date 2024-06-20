@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
         flexibleSpace: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
       ),
       drawer: const AppDrawer(), // Add the drawer here
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
+            const Text(
               'Make your tasks more efficient with the help of AI',
               style: TextStyle(
                 fontSize: 15,
