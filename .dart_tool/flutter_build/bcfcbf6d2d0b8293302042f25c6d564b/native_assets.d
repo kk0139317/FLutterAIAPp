@@ -1,1 +1,0 @@
- D:\\Emagesoft\\Flutter\\flutter_application_1\\.dart_tool\\flutter_build\\bcfcbf6d2d0b8293302042f25c6d564b\\native_assets.yaml: 
