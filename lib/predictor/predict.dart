@@ -8,7 +8,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 
 class UploadImageScreen extends StatefulWidget {
+  const UploadImageScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _UploadImageScreenState createState() => _UploadImageScreenState();
 }
 
@@ -20,12 +23,12 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
   final String apiUrl = 'http://192.168.1.244:8001/api/upload/';
 
   Future<void> _uploadImage(File imageFile) async {
-    var stream = new http.ByteStream(imageFile.openRead());
+    var stream = http.ByteStream(imageFile.openRead());
     var length = await imageFile.length();
 
     var uri = Uri.parse(apiUrl);
-    var request = new http.MultipartRequest("POST", uri);
-    var multipartFile = new http.MultipartFile(
+    var request = http.MultipartRequest("POST", uri);
+    var multipartFile = http.MultipartFile(
       'file',
       stream,
       length,
@@ -85,15 +88,15 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
             child: ListBody(
               children: <Widget>[
                 GestureDetector(
-                  child: Text('Gallery'),
+                  child: const Text('Gallery'),
                   onTap: () {
                     Navigator.of(context).pop();
                     _getImageFromGallery();
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 GestureDetector(
-                  child: Text('Camera'),
+                  child: const Text('Camera'),
                   onTap: () {
                     Navigator.of(context).pop();
                     _getImageFromCamera();
@@ -129,7 +132,7 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 3,
                       blurRadius: 7,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                   image: _image != null
@@ -169,7 +172,7 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
               const SizedBox(height: 20),
               ElevatedButton.icon(
                 onPressed: _showImageSourceDialog,
-                icon: Icon(Icons.image),
+                icon: const Icon(Icons.image),
                 label: const Text(
                   'Upload Image',
                   style: TextStyle(fontSize: 16),
